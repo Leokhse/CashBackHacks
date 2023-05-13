@@ -2,7 +2,14 @@ package ru.netology.service;
 
 public class CashbackHackServiceTest {
 
-    @org.junit.Test
+    private CashbackHackService service;
+
+    @org.junit.jupiter.api.BeforeEach
+    public void setUp() {
+        service = new CashbackHackService();
+    }
+
+    @org.junit.jupiter.api.Test
     public void testRemain() {
         CashbackHackService service = new CashbackHackService();
         int amount = 500;
@@ -11,10 +18,10 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
 
 
-        org.junit.Assert.assertEquals(expected, actual);
+        org.junit.jupiter.api.Assertions.assertEquals(expected, actual);
     }
 
-    @org.junit.Test
+    @org.junit.jupiter.api.Test
     public void testRemainEqualToBoundary() {
         CashbackHackService service = new CashbackHackService();
         int amount = 1000;
@@ -22,10 +29,10 @@ public class CashbackHackServiceTest {
 
         int actual = service.remain(amount);
 
-        org.junit.Assert.assertEquals(expected, actual);
+        org.junit.jupiter.api.Assertions.assertEquals(expected, actual);
     }
 
-    @org.junit.Test
+    @org.junit.jupiter.api.Test
     public void testRemainGreaterThanBoundary() {
         CashbackHackService service = new CashbackHackService();
         int amount = 1500;
@@ -33,6 +40,6 @@ public class CashbackHackServiceTest {
 
         int actual = service.remain(amount);
 
-        org.junit.Assert.assertEquals(expected, actual);
+        org.junit.jupiter.api.Assertions.assertEquals(expected, actual);
     }
 }
