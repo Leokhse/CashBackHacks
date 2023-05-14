@@ -11,6 +11,9 @@ on: [push, pull_request]
 
 jobs:
   build:
+push:
+    branches:
+      - '*'
 
     runs-on: ubuntu-latest
 
